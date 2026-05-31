@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+body {
+  background: #071018;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(to right, rgba(7,16,24,0.95), rgba(7,16,24,0.7)),
+    url("https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=2070&auto=format&fit=crop");
+    
+  background-size: cover;
+  background-position: center;
+}
+@keyframes whatsappAttention {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  8% {
+    transform: translateY(-8px) scale(1.06);
+  }
+
+  16% {
+    transform: translateY(0) scale(1);
+  }
+
+  24% {
+    transform: translateY(-6px) scale(1.04);
+  }
+
+  32% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.whatsapp-attention {
+  animation: whatsappAttention 3s ease-in-out infinite;
+}
+
+.sell-card{
+  width:280px;
+  height:360px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:32px;
+
+  background:linear-gradient(
+    145deg,
+    #071018 0%,
+    #0b1f33 70%,
+    #10253d 100%
+  );
+
+  border:2px solid #d4af37;
+
+  box-shadow:
+    0 0 20px rgba(212,175,55,.35),
+    0 0 40px rgba(212,175,55,.25),
+    inset 0 0 20px rgba(212,175,55,.08);
+
+  color:white;
+  position:relative;
+  overflow:hidden;
+
+  animation:sellFloat 3s ease-in-out infinite;
+}
+
+.sell-card:hover{
+  transform:translateY(-6px);
+}
+
+.sell-icon{
+  font-size:72px;
+  margin-bottom:20px;
+  color:#d4af37;
+
+  filter:
+    drop-shadow(0 0 10px rgba(212,175,55,.8))
+    drop-shadow(0 0 25px rgba(212,175,55,.5));
+}
+
+.sell-card h3{
+  font-size:28px;
+  font-weight:900;
+  margin:0;
+}
+
+.sell-card h2{
+  font-size:52px;
+  line-height:1;
+  font-weight:900;
+  margin:10px 0 25px;
+  text-align:center;
+}
+
+.sell-features{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+  margin-bottom:30px;
+}
+
+.sell-btn{
+  background:white;
+  color:#5d008d;
+
+  padding:14px 30px;
+
+  border-radius:14px;
+
+  font-weight:900;
+}
+
+@keyframes sellCardPulse{
+  0%{
+    box-shadow:
+    0 0 20px rgba(255,0,255,.25),
+    0 0 40px rgba(255,166,0,.20);
+  }
+
+  50%{
+    box-shadow:
+    0 0 45px rgba(255,0,255,.65),
+    0 0 80px rgba(255,166,0,.45);
+  }
+
+  100%{
+    box-shadow:
+    0 0 20px rgba(255,0,255,.35),
+    0 0 40px rgba(255,166,0,.25);
+  }
+}
+@keyframes sellFloat{
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+.sell-btn{
+  margin-top:18px;
+  background:#d4af37;
+  color:#071018;
+  font-weight:900;
+  border-radius:14px;
+  padding:14px 26px;
+  box-shadow:0 0 15px rgba(212,175,55,.4);
+  transition:.3s;
+}
+
+.sell-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 25px rgba(212,175,55,.7);
+}
