@@ -123,9 +123,9 @@ export default function Home() {
         </div>
         <div className="absolute right-80 top-[32%] -translate-y-1/2">
   <a
-    href="/sell"
-    className="sell-card"
-  >
+  href="/sell"
+  className="sell-card hidden md:block"
+>
     <div className="sell-icon">⚡</div>
 
     <h1>SELL SURPLUS</h1>
