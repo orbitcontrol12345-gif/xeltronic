@@ -41,8 +41,8 @@ body {
 }
 
 .sell-card{
-  width:150px;
-  height:200px;
+  width:50px;
+  height:100px;
 
   display:flex;
   flex-direction:column;
