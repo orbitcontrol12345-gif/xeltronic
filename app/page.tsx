@@ -121,7 +121,7 @@ export default function Home() {
 
           </div>
         </div>
-        <div className="absolute right-80 top-[32%] -translate-y-1/2">
+        <div className="absolute left-20 top-[32%] -translate-y-1/2 scale-90">
   <a
   href="/sell"
   className="sell-card hidden md:block"
