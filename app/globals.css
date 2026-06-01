@@ -167,7 +167,12 @@ body {
   box-shadow:0 0 25px rgba(212,175,55,.7);
 }
 @media (max-width: 768px) {
-  .sell-card {
+  a.sell-card,
+  .sell-card,
+  .sell-card * {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
