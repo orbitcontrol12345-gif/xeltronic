@@ -41,8 +41,8 @@ body {
 }
 
 .sell-card{
-  width:280px;
-  height:360px;
+  width:230px;
+  height:300px;
 
   display:flex;
   flex-direction:column;
@@ -166,13 +166,36 @@ body {
   transform:translateY(-2px);
   box-shadow:0 0 25px rgba(212,175,55,.7);
 }
-@media (max-width: 768px) {
-  a.sell-card,
-  .sell-card,
-  .sell-card * {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+@media (max-width: 767px) {
+  .sell-card {
+    width: 150px;
+    height: 210px;
+    border-radius: 22px;
+  }
+
+  .sell-card h1 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .sell-card h2 {
+    font-size: 17px;
+    line-height: 1.15;
+  }
+
+  .sell-features {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .sell-btn {
+    width: 120px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .sell-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
   }
 }
