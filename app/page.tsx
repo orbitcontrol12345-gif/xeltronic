@@ -1,11 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { products } from "./data/products";
+type Product = {
+  name: string;
+  part: string;
+  brand: string;
+  condition: string;
+  image: string;
+  category: string;
+  description: string;
+};
 export default function Home() {
   const brands = ["SIEMENS", "ABB", "SCHNEIDER", "OMRON", "HONEYWELL", "YOKOGAWA"];
+const [products, setProducts] = useState<Product[]>([]);
+const [loading, setLoading] = useState(true);
 
+useEffect(() => {
+  fetch("/api/products")
+    .then((res) => res.json())
+    .then((data) => {
+      setProducts(data);
+      setLoading(false);
+    })
+    .catch(() => {
+      setProducts([]);
+      setLoading(false);
+    });
+}, []);
 
   const [search, setSearch] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("ALL");
