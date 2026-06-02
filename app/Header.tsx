@@ -54,8 +54,8 @@ const isActive = (href: string) => {
   };
 
   return (
-    <header className="fixed left-0 top-0 z-50 h-45 w-full border-b border-white/10 bg-[#071018]/75 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1 md:px-6 md:py-4">
+    <header className="fixed left-0 top-0 z-50 h-20 md:h-45 w-full border-b border-white/10 bg-[#071018]/75 backdrop-blur-xl">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 py-1 md:px-6 md:py-4">
         <div className="absolute left-1/2 hidden w-[520px] -translate-x-1/2 lg:block">
           <div className="relative">
   <input
