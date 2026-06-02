@@ -108,7 +108,7 @@ const isActive = (href: string) => {
           <img
             src="/logo.png.png"
             alt="Xeltronic"
-            className="h-10 md:h-14 w-auto object-contain"
+            className="max-h-55 w-auto object-contain"
           />
         </a>
 
