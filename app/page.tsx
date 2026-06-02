@@ -121,10 +121,10 @@ export default function Home() {
 
           </div>
         </div>
-        <div className="absolute right-32 top-[32%] -translate-y-1/2 scale-90">
+        <div className="absolute right-20 top-[32%] -translate-y-1/2 scale-90 hidden md:block">
   <a
   href="/sell"
-  className="sell-card hidden md:block"
+  className="sell-card"
 >
     <div className="sell-icon">⚡</div>
 
