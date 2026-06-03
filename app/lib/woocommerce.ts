@@ -53,7 +53,7 @@ function mapProduct(item: any): Product {
     item.categories?.[0]?.name ||
     "Xeltronic";
 
-  return {
+    return {
     name: item.name || "",
     part: extractPartNumber(item),
     sku: item.sku || item.slug || item.id.toString(),
@@ -67,6 +67,25 @@ function mapProduct(item: any): Product {
       "",
   };
 }
+
+export async function getWooProducts(): Promise<Product[]> {
+  const url =
+    `${baseUrl}/wp-json/wc/v3/products?per_page=100&status=publish&consumer_key=${key}&consumer_secret=${secret}`;
+
+  const res = await fetch(url, {
+    next: { revalidate: 300 },
+  });
+
+  if (!res.ok) {
+    console.error("WooCommerce API Error");
+    return [];
+  }
+
+  const data = await res.json();
+
+  return data.map(mapProduct);
+}
+
 export async function getWooProductByPart(
   part: string
 ): Promise<Product | null> {
@@ -79,7 +98,11 @@ export async function getWooProductByPart(
       const partNo = item.part?.toLowerCase() || "";
       const name = item.name?.toLowerCase() || "";
 
-      return sku === search || partNo === search || name.includes(search);
+      return (
+        sku === search ||
+        partNo === search ||
+        name.includes(search)
+      );
     }) || null
   );
 }
