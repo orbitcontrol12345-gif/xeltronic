@@ -258,7 +258,7 @@ href={`/products/${encodeURIComponent(product.sku)}`}
                 </Link>
 
                 <Link
-                  href={`/rfq?part=${product.part}`}
+                  href={`/rfq?part=${encodeURIComponent(product.sku)}`}
                   className="flex-1 rounded-xl bg-yellow-400 px-5 py-3 text-center font-bold text-black hover:bg-yellow-300"
                 >
                   RFQ
