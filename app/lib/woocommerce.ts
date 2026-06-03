@@ -1,13 +1,13 @@
 export type Product = {
   name: string;
   part: string;
+  sku: string;
   brand: string;
   condition: string;
   image: string;
   category: string;
   description: string;
 };
-
 const baseUrl = process.env.WC_BASE_URL!;
 const key = process.env.WC_CONSUMER_KEY!;
 const secret = process.env.WC_CONSUMER_SECRET!;
@@ -54,9 +54,11 @@ function mapProduct(item: any): Product {
     "Xeltronic";
 
   return {
-    name: item.name || "",
-    part: extractPartNumber(item),
-    brand,
+   return {
+  name: item.name || "",
+  part: extractPartNumber(item),
+  sku: item.sku || item.slug || item.id.toString(),
+  brand,
     condition: extractCondition(item),
     image: item.images?.[0]?.src || "/placeholder.png",
     category: item.categories?.[0]?.name || "Industrial Parts",
@@ -65,4 +67,20 @@ function mapProduct(item: any): Product {
       cleanHtml(item.description) ||
       "",
   };
+}
+export async function getWooProductByPart(
+  part: string
+): Promise<Product | null> {
+  const products = await getWooProducts();
+  const search = decodeURIComponent(part).toLowerCase();
+
+  return (
+    products.find((item) => {
+      const sku = item.sku?.toLowerCase() || "";
+      const partNo = item.part?.toLowerCase() || "";
+      const name = item.name?.toLowerCase() || "";
+
+      return sku === search || partNo === search || name.includes(search);
+    }) || null
+  );
 }
