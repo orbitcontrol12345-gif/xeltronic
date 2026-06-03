@@ -99,7 +99,7 @@ useEffect(() => {
 
       suggestions.map((product) => (
         <Link
-          key={product.sku}
+          key={product.part}
 href={`/products/${encodeURIComponent(product.sku)}`}
           onClick={() => setSearch("")}
           className="flex items-center gap-4 border-b border-white/10 px-5 py-4 text-white transition hover:bg-yellow-400 hover:text-black"
@@ -251,7 +251,7 @@ href={`/products/${encodeURIComponent(product.sku)}`}
 
               <div className="mt-5 flex gap-3">
                 <Link
-  href={`/products/${encodeURIComponent(product.sku)}`}
+href={`/products/${encodeURIComponent(product.part)}`}
                   className="flex-1 rounded-xl border border-white/20 px-5 py-3 text-center font-bold hover:border-yellow-400"
                 >
                   Details
