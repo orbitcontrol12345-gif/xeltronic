@@ -48,7 +48,7 @@ useEffect(() => {
     const matchesBrand =
       selectedBrand === "ALL" ||
       product.brand.toUpperCase().includes(selectedBrand) ||
-      product.name.toUpperCase().includes(selectedBrand);
+    product.name.toUpperCase().includes(selectedBrand);
 
     return matchesSearch && matchesBrand;
   });
@@ -99,8 +99,8 @@ useEffect(() => {
 
       suggestions.map((product) => (
         <Link
-          key={product.part}
-          href={`/products/${product.part}`}
+          key={product.sku}
+href={`/products/${encodeURIComponent(product.sku)}`}
           onClick={() => setSearch("")}
           className="flex items-center gap-4 border-b border-white/10 px-5 py-4 text-white transition hover:bg-yellow-400 hover:text-black"
         >
@@ -251,7 +251,7 @@ useEffect(() => {
 
               <div className="mt-5 flex gap-3">
                 <Link
-                  href={`/products/${product.part}`}
+  href={`/products/${encodeURIComponent(product.sku)}`}
                   className="flex-1 rounded-xl border border-white/20 px-5 py-3 text-center font-bold hover:border-yellow-400"
                 >
                   Details
