@@ -54,11 +54,10 @@ function mapProduct(item: any): Product {
     "Xeltronic";
 
   return {
-   return {
-  name: item.name || "",
-  part: extractPartNumber(item),
-  sku: item.sku || item.slug || item.id.toString(),
-  brand,
+    name: item.name || "",
+    part: extractPartNumber(item),
+    sku: item.sku || item.slug || item.id.toString(),
+    brand,
     condition: extractCondition(item),
     image: item.images?.[0]?.src || "/placeholder.png",
     category: item.categories?.[0]?.name || "Industrial Parts",
